@@ -1,29 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 
 function clickA() {
-  const { button1, setButton1 } = useState("");
-  const { button2, setButton2 } = useState("");
-
-  function handleClick(Event) {
+  function handleClick(event) {
     event.preventDefault();
-    alert('hi');
+    // alert('hi');
+    console.log(event.target.value);
+    // console.log("Button id is:-button-a");
   }
 
   return (
     <>
-    <input type="text" onSubmit={handleClick}/>
       <h1>Event handler</h1>
       <button
         id="button-a"
-        value={button1}
-        onChange={(event) =>setButton1{event.target.value}}>
+        value="Button id is:-button-a"
+        onClick={handleClick}
+      >
         button-a
       </button>
       <button
         id="button-b"
-        value={button2}
-        onChange={(event) =>setButton2{event.target.value}}>
-              button-b
+        value="Button id is:-button-b"
+        onClick={handleClick}
+      >
+        button-b
       </button>
     </>
   );
